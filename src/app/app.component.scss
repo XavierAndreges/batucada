@@ -1,0 +1,125 @@
+.block-instruments {
+    height: 100%;
+}
+
+.instrument {
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: grey solid 1px;
+    border-right: grey solid 1px;
+}
+
+.instrument-block {
+    height: 60%;
+    text-align: center;
+}
+
+.instrument-image {
+    width: 100%;
+    height: calc(100% - 30px);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.instrument-name {
+    width: 100%;
+    background-color: lightblue;
+    color: white;
+    padding: 5px 0px;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+}
+
+.mute, .solo {
+    height: 40%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.mute:hover, .solo:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.mute {
+    background-size: auto 50%;
+    background-image: url('../assets/icon/sound_on.png');
+}
+
+.mute[isMuted="true"] {
+    background-image: url('../assets/icon/sound_off.png');
+}
+
+.mute[isSoloActivated="true"], .mute[isSoloActivated="true"]:hover {
+    cursor: auto;
+    opacity: 0.5;
+}
+
+.solo {
+    background-size: auto 40%;
+    background-image: url('../assets/icon/solo.png');
+}
+
+.solo[isSoloActivated="true"] {
+    background-image: url('../assets/icon/solo_off.png');
+}
+
+.solo[isSoloSelected="true"] {
+    background-image: url('../assets/icon/solo_on.png');
+}
+
+.controls {
+    border: lightBlue solid 1px;
+    position: fixed;
+    bottom: 0px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadingSpinner {
+    display: block;
+}
+
+.block-play-pause {
+    width: 14%;
+    height: 100%;
+    margin: 0% 2% 0% 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-play-pause {
+    display: none;
+    height: 50%;
+}
+
+.icon-play-pause:hover {
+    cursor: pointer;
+    opacity: 0,5;
+}
+
+#waveform {
+    width: 74%;
+    margin: 0% 4% 0% 2%;
+    height: 80px;
+}
+
+@media (min-width: 768px) {
+    .instrument {
+        height: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    .mute:hover, .solo:hover, .mute[isSoloActivated="true"]:hover  {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,73 @@
+<mat-drawer-container class="main-container" autosize>
+
+    <mat-drawer #drawer class="sidenav" mode="side">
+        <mat-list>
+            <mat-list-item class="list-item-menu">Tucajuca</mat-list-item>
+            <mat-nav-list class="sous-menu-repertoire">
+                <a mat-list-item href="./tucajuca/bahiaTuca">Bahia</a>
+                <a mat-list-item href="./tucajuca/mecalor">Me Calor</a>
+                <a mat-list-item href="./tucajuca/negrepelisse">Negrepelisse</a>
+                <a mat-list-item href="./tucajuca/timbaladaTuca">Timbalada</a>
+                <a mat-list-item href="./tucajuca/tudu">Tudu</a>
+            </mat-nav-list> 
+            <mat-divider></mat-divider>  
+            <mat-list-item class="list-item-menu">Marcus Santos</mat-list-item>
+            <mat-nav-list class="sous-menu-repertoire">
+                <a mat-list-item href="./marcusSantos/samba-reggae-class">Samba Reggae Class</a>
+            </mat-nav-list>   
+            <!--      
+            <mat-divider></mat-divider>   
+            <mat-list-item class="list-item-menu">Batucalub</mat-list-item>
+            <mat-nav-list class="sous-menu-repertoire">
+                <a mat-list-item href="./batucalub/batucalub">Batucaclub</a>
+                <a mat-list-item href="./batucalub/bahia">Bahia</a>
+                <a mat-list-item href="./batucalub/calor">Calor</a>
+                <a mat-list-item href="./batucalub/energia">Energia</a>
+                <a mat-list-item href="./batucalub/yemanja">La Yemanja</a>
+                <a mat-list-item href="./batucalub/olodum">Olodum</a>
+                <a mat-list-item href="./batucalub/sambalub">Sambalub</a>
+                <a mat-list-item href="./batucalub/swing-axe">Swing Axe</a>
+                <a mat-list-item href="./batucalub/timbalada">Timbalada</a>
+                <a mat-list-item href="./batucalub/zef1">Zef 1</a>
+            </mat-nav-list>         
+            <mat-divider></mat-divider>        
+            <mat-list-item class="list-item-menu">Tambores de la libertad</mat-list-item>
+            <mat-nav-list class="sous-menu-repertoire">
+                <a mat-list-item href="./tambores/samba-reggae">Samba Reggae</a>
+                <a mat-list-item href="./tambores/samba-hegg">Samba Hegg</a>
+                <a mat-list-item href="./tambores/zouk-merengue">Zouk Merengue</a>
+                <a mat-list-item href="./tambores/tumbala">Tumbala</a>
+                <a mat-list-item href="./tambores/kuruzu">Kuruzu</a>
+                <a mat-list-item href="./tambores/komisir">Komisir</a>
+                <mat-list-item>Samba Afro</mat-list-item>
+                    <a mat-list-item href="./tambores/samba-afro/breaks" class="sous-menu-track">- breaks</a>
+                    <a mat-list-item href="./tambores/samba-afro/multipiste" class="sous-menu-track">- multipiste</a>
+                <mat-list-item>Samba Reggae ++</mat-list-item>
+                    <a mat-list-item href="./tambores/samba-reggae/break" class="sous-menu-track">- break</a>
+                    <a mat-list-item href="./tambores/samba-reggae/multipiste" class="sous-menu-track">- multipiste</a>
+                    <a mat-list-item href="./tambores/samba-reggae/live" class="sous-menu-track">- live</a>
+                <a mat-list-item href="./tambores/billy-jean">Billy Jean</a>
+                <a mat-list-item href="./tambores/confirme1">Confirmé 1</a>
+                <a mat-list-item href="./tambores/confirme2">Confirmé 2</a>
+                <a mat-list-item href="./tambores/morceau07">Morceau 7</a>
+                <a mat-list-item href="./tambores/morceau08">Morceau 8</a>
+                <a mat-list-item href="./tambores/morceau09">Morceau 9</a>
+                <a mat-list-item href="./tambores/morceau10">Morceau 10</a>
+                <a mat-list-item href="./tambores/morceau12">Morceau 12</a>
+                <a mat-list-item href="./tambores/morceau14">Morceau 14</a>
+            </mat-nav-list>
+            --> 
+        </mat-list>  
+    </mat-drawer>
+    
+    <mat-toolbar class="header">
+        <button mat-icon-button (click)="drawer.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div #title></div>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+    
+</mat-drawer-container>
+

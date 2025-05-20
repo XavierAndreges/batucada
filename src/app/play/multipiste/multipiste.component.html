@@ -1,0 +1,28 @@
+<div class="container-fluid">
+
+    <div class="row block-instruments">
+    <div *ngFor="let instrument of track.files; index as i" 
+        class="col-6 col-md-3 instrument" 
+        ng-style="{'height': instrumentHeight}">
+        <div class="row p-0 m-0 w-100 h-100">
+            <div #instrumentBlock class="col-12 instrument-block p-0 m-0">
+                <div #instrumentImage class="instrument-image"></div>
+                <div class="instrument-name">{{ instrument.name }}</div>
+            </div>
+            <div #muteBtn class="col-6 mute" (click)="muteFile(i)"></div>
+            <div #soloBtn class="col-6 solo" (click)="soloFile(i)"></div>
+            <div id="{{ 'waveform' + i }}" class="waveform"></div>
+        </div>
+    </div>
+    </div>
+
+
+    <div class="row controls w-100">
+        <div class="block-play-pause">
+            <mat-progress-spinner #loadingSpinner mode="indeterminate" class="loadingSpinner" [diameter]="50"></mat-progress-spinner>
+            <img #iconPlayPause class="icon-play-pause" [src]="iconPlayPauseUrl" (click)="playSound()"/>
+        </div>
+        <div id="waveform"></div>
+    </div>
+
+</div>

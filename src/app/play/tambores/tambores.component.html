@@ -1,0 +1,19 @@
+<div class="container-fluid">
+
+    <div class="block-track" *ngFor="let file of track.files; index as i">
+        <div class="file-name">{{ file.name }}</div>
+        <div class="controls w-100">
+            <div class="block-play-pause">
+                <img #iconPlayPause class="icon-play-pause" [src]="iconPlayPauseUrl" (click)="playSound(i)"/>
+            </div>
+            <div id="{{ 'waveform' + i }}" class="waveform"></div>
+        </div>
+        <!--
+        <div *ngIf="file.isMultipiste" class="playMuteSolo w-100" [routerLink]="'./multipiste'">
+            Afficher le multipiste
+        </div>
+        -->
+    </div>
+
+</div>
+

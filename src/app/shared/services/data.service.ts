@@ -41,7 +41,7 @@ export class DataService {
       },
       { 
         id: 'bahiaTuca', 
-        title : 'Bahia 2',
+        title : 'Bahia bis',
         folder: 'Bahia', 
         files : [
           { name: 'break', file: '1-break.mp3', isPlaying: false},

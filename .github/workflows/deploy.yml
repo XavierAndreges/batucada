@@ -25,10 +25,10 @@ jobs:
       run: npm run build:prod
 
     - name: Upload via FTP to OVH
-      uses: eisberg-labs/ftp-deploy@v1.0.0
+      uses: peaceiris/actions-ftp-deploy@v3
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
+        ftp-server: ${{ secrets.FTP_SERVER }}
+        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./dist/batuk/
-        server-dir: ${{ secrets.FTP_TARGET_DIR }}
+        remote-dir: ${{ secrets.FTP_TARGET_DIR }}

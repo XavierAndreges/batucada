@@ -39,3 +39,4 @@ jobs:
           **/.gitignore
           **/.gitattributes
           **/assets/**
+        log-level: verbose

@@ -32,3 +32,10 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./dist/batuk/browser/
         server-dir: ${{ secrets.FTP_TARGET_DIR }}
+        dangerous-clean-slate: false
+        exclude: |
+          **/.DS_Store
+          **/.git
+          **/.gitignore
+          **/.gitattributes
+          **/assets/**

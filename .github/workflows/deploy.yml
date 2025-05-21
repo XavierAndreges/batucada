@@ -24,28 +24,13 @@ jobs:
     - name: Build Angular app
       run: npm run build:prod
 
-    - name: Prepare files for deployment
-      run: |
-        # Supprimer l'ancien fichier de synchronisation s'il existe
-        rm -f .ftp-deploy-sync-state.json
-        # Déplacer les fichiers du dossier browser vers la racine
-        cp -r ./dist/batuk/browser/* ./dist/batuk/
-        rm -rf ./dist/batuk/browser
-        # Créer un nouveau fichier de synchronisation propre
-        echo '{"version":"1.0","files":{},"dirs":{"":{"type":"dir","name":"","files":{}}}}' > .ftp-deploy-sync-state.json
-        # Vérifier que le fichier de synchronisation est propre
-        if grep -q "browser" .ftp-deploy-sync-state.json; then
-          echo "ERREUR: Le fichier de synchronisation contient encore une référence à 'browser'"
-          exit 1
-        fi
-
     - name: Upload via FTP to OVH
       uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./dist/batuk/
+        local-dir: ./dist/batuk/browser
         server-dir: ${{ secrets.FTP_TARGET_DIR }}
         dangerous-clean-slate: false
         exclude: |

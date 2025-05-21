@@ -24,13 +24,18 @@ jobs:
     - name: Build Angular app
       run: npm run build:prod
 
+    - name: Prepare files for deployment
+      run: |
+        cp -r ./dist/batuk/browser/* ./dist/batuk/
+        rm -rf ./dist/batuk/browser
+
     - name: Upload via FTP to OVH
       uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./dist/batuk/browser/
+        local-dir: ./dist/batuk/
         server-dir: ${{ secrets.FTP_TARGET_DIR }}
         dangerous-clean-slate: false
         exclude: |

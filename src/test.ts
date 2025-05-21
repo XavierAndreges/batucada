@@ -14,5 +14,5 @@ getTestBed().initTestEnvironment(
 );
 
 //ng serve
-//ng build --prod --base-href=/balthus/
+//ng build --configuration=production --base-href=/batuk/
 //cd /Users/julienbernard/Documents/angular/Batucada

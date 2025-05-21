@@ -30,7 +30,7 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./dist/batuk/browser
+        local-dir: ./dist/batuk/browser/
         server-dir: ${{ secrets.FTP_TARGET_DIR }}
         dangerous-clean-slate: false
         exclude: |
